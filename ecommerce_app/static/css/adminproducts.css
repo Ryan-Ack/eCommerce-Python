@@ -1,0 +1,166 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    width: 1080px;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color:#ff2d2e;
+    height: 60px;
+    padding-top: 20px;
+}
+
+    header h1 {
+        color: white;
+        margin-left: 15px;
+        font-size: 28pt;
+    }
+
+    header div {
+        color: white;
+        margin-right: 15px;
+        padding-top: 10px;
+        display: flex;
+        font-size: 14pt;
+    }
+
+        header div p {
+            margin-right: 30px;
+        }
+
+            header div p a {
+                color: white;
+                text-decoration: none;
+            }
+            
+main {
+    border: 2px solid black;
+    border-bottom: none;
+    padding: 20px;
+}
+
+    #navbar {
+        display: flex;
+        margin-left: 0;
+        padding: 5px 0 0 10px;
+    }
+
+        #navbar p {
+            margin-left: 20px;
+            padding-top: 10px;
+        }
+
+    header a {
+        margin-right: 0;
+        padding: 15px 10px 0 0;
+        color: white;
+    }
+
+.align {
+    display: flex;
+    flex-direction: column;
+}
+
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: left;
+    margin-left: 10px;
+    width: 78%;
+}
+    
+    table th {
+        background: #cccccc;
+        border-bottom: 2px solid black;
+    }
+    
+    table th, td {
+        border-right: 2px solid black;
+        padding: 5px;
+        color: black;
+    }
+    
+    table tr:nth-child(odd) {
+        background: #eee;
+    }
+    
+    table tr:nth-child(even) {
+        background: #fff;
+    }
+
+    table td img {
+        width: 50%;
+    }
+
+#filter_bar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+    #filter_bar a {
+        margin-right: 0;
+    }
+
+    #filter_bar button {
+        background: #8ddce3;
+        height: 25px;
+        border: 1px solid black;
+        box-shadow: 1.5px 3px;
+    }
+
+    #searchbar {
+        margin-left: 0;
+    }
+
+        #searchbar input {
+            border: 2px solid black;
+            border-radius: 3px;
+            padding: 5px;
+            height: 10px;
+        }
+
+    #sortbar {
+        margin-right: 0;
+    }
+
+.sortbar {
+    height: 30px;
+    border: 2px solid black;
+}
+
+footer {
+    padding: 20px;
+    border: 2px solid black;
+    border-top: none;
+}
+
+#page_selector {
+    display: flex;
+}
+
+    #page_selector p {
+        margin-left: 10px;
+        border-right: 2px solid black;
+        padding-right: 15px;
+    }
+
+    #page_selector a {
+        text-decoration: none;
+        color: blue;
+    }
+
+    #page_selector p:nth-last-child(1){
+        border-right: none;
+    }
+
+footer a:visited {
+    color: blue;
+}

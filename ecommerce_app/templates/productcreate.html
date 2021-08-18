@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo eCommerce</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/productcreate.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <div>
+            <p><a href="/dashboard/orders">Orders</a></p>
+            <p><a href="/dashboard/products">Products</a></p>
+            <p><a href="/admin_logout">Logout</a></p>
+        </div>
+    </header>
+    <form action="/dashboard/product/process_create" method="post">
+        {% csrf_token %}
+        <main>
+            <div id="name">
+                <p>
+                    <label>Name</label>
+                    <input type="text" name="item_name">
+                </p>
+            </div>
+            <div id="price">
+                <p>
+                    <label>Price</label>
+                    <input type="number" step="any" name="item_price">
+                </p>
+            </div>
+            <div id="description">
+                <p>
+                    <label>Description</label>
+                    <textarea name="item_description"></textarea>
+                </p>
+            </div>
+            <div id="size">
+                <p>
+                    <label>Size</label>
+                    <select name="item_size">
+                        <option value="sml">Small</option>
+                        <option value="med">Medium</option>
+                        <option value="lrg">Large</option>
+                    </select>
+                </p>
+            </div>
+            <div id="categories">
+                <p>
+                    <label>Category</label>
+                    <select name="category">
+                        <option value="Sandal">Sandal</option>
+                        <option value="Clog">Clog</option>
+                        <option value="WaterFriendly">WaterFriendly</option>
+                    </select>
+                </p>
+            </div>
+            <div id="actions">
+                <a href="#"><button name="cancel">Cancel</button></a>
+                <a href="#"></a><button type="submit" value="Submit" id="update">Create</button></a>
+            </div>
+        </main>
+    </form>
+</body>
+
+</html>

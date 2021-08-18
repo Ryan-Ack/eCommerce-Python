@@ -1,0 +1,115 @@
+* {
+    margin: 0 auto;
+}
+
+body {
+    width: 1080px;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color:#ff2d2e;
+    height: 60px;
+    padding-top: 20px;
+}
+
+    header h1 {
+        color: white;
+        margin-left: 15px;
+        font-size: 28pt;
+    }
+
+    header div {
+        color: white;
+        margin-right: 15px;
+        padding-top: 10px;
+        display: flex;
+        font-size: 14pt;
+    }
+
+        header div p {
+            margin-right: 30px;
+        }
+
+            header div p a {
+                color: white;
+                text-decoration: none;
+            }
+
+main {
+    display: flex;
+}
+
+    #user_details {
+        border: 2px solid black;
+        width: 200px;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+        #user_details p {
+            margin-left: 5px;
+        }
+
+    #cart_details {
+        margin-top: 20px;
+        width: 560px;
+    }
+
+    table{
+        border: 2px solid black;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+        table th {
+            background: #cccccc;
+            border-bottom: 2px solid black;
+        }
+        
+        table th, td {
+            border-right: 2px solid black;
+            padding: 5px;
+            color: black;
+        }
+        
+        table tr:nth-child(odd) {
+            background: #eee;
+        }
+        
+        table tr:nth-child(even) {
+            background: #fff;
+        }
+
+    #under_table {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+        #status {
+            border: 2px solid black;
+            width: 175px;
+            height: 25px;
+            background-color: yellowgreen;
+            margin-left: 0;
+        }
+
+            #status p {
+                margin-top: 3px;
+                margin-left: 5px;
+            }
+
+        #cost {
+            border: 2px solid black;
+            width: 275px;
+            height: 75px;
+            margin-right: 0;
+        }
+
+            #cost p {
+                margin-top: 5px;
+                margin-left: 5px;
+            }

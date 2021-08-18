@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo eCommerce</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Dojo eCommerce</h1>
+        <div>
+            <p><a href="/carts">Shopping Cart {1}</a></p>
+            <p><a href="/loginandreg">Login</a></p>
+            <p><a href="/logout">Logout</a></p>
+        </div>
+    </header>
+    <main>
+        <div id="side-bar">
+            <p>
+                <input type="text" value="Product Name">
+                <a href=""><img src="{%static 'img/magnifying_icon.png'%}" alt="magnify_glass"></a>
+            </p>
+            <ul>Total Products ({{ total_products }})
+                <li>Sandals: ({{ all_sandals }})</li>
+                <li>Clogs: ({{ all_clogs }})</li>
+                <li>Waterfriendly: ({{ all_waterfriendlys }})</li>
+            </ul>
+        </div>
+        <div id="container">
+            <div id="nav-bar">
+                <h1> Sandals (page {{ page }})</h1>
+                <div class="pagination">
+                    <span class="pages">
+                        {% if sandals.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ sandals.previous_page_number }}">previous</a>
+                        {% endif %}
+                        {% if sandals.has_next %}
+                            <a href="?page={{ sandals.next_page_number }}">next</a>
+                            <a href="?page={{ sandals.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <select name="sort_by">
+                    <option value="default" disabled selected hidden>-Sort by-</option>
+                    <option value="price">Price</option>
+                    <option value="most_popular">Most Popular</option>
+                </select>
+            </form>
+
+            <div id="products">
+                {% for sandal in sandals %}
+                    <div class="content">
+                        <a href="/show/{{ sandal.id }}"><img src="{%static 'img/Arizona_tobacco.jpg'%}" alt="item image"></a>
+                        <p class="price" name="{{ sandal.id }}">${{ sandal.item_price }}</p>
+                        <p class="item">{{ sandal.item_name }} ({{ sandal.item_size }})</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id="footer">
+                {% if sandals.has_other_pages %}
+                    <ul>
+                        {% if sandals.has_previous %}
+                            <li><a href="?page={{ sandals.previous_page_number }}">&laquo;</a></li>
+                        {% else %}
+                            <li class="disabled"><span>&laquo;</span></li>
+                        {% endif %}
+                        {% for index in sandals.paginator.page_range %}
+                            {% if sandals.number == index %}
+                                <li class="active"><span>{{ index }} - current</span></li>
+                            {% else %}
+                                <li><a href="?page={{ index }}"></a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if sandals.has_next %}
+                            <li><a href="?page={{ sandals.next_page_number }}">&raquo;</a></li>
+                        {% else %}
+                            <li class="disabled"><span>&raquo;</span></li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

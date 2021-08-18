@@ -1,0 +1,91 @@
+* {
+    margin: 0 auto;
+}
+
+body {
+    width: 1080px;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color:#ff2d2e;
+    height: 60px;
+    padding-top: 20px;
+}
+
+    header h1 {
+        color: white;
+        margin-left: 15px;
+        font-size: 28pt;
+    }
+
+    header div {
+        color: white;
+        margin-right: 15px;
+        padding-top: 10px;
+        display: flex;
+        font-size: 14pt;
+    }
+
+        header div p {
+            margin-right: 30px;
+        }
+
+            header div p a {
+                color: white;
+                text-decoration: none;
+            }
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+    main #name {
+        margin-left: 405px;
+        margin-bottom: 20px;
+    }
+
+    main #price {
+        margin-left: 410px;
+        margin-bottom: 20px;
+    }
+    main #description {
+        margin-left: 368px;
+        margin-bottom: 20px;
+    }
+
+    main #size {
+        margin-left: 415px;
+        margin-bottom: 20px;
+    }
+
+    main #categories {
+        margin-left: 384px;
+        margin-bottom: 20px;
+    }
+
+    main #actions {
+        display: flex;
+    }
+
+        main #actions button {
+            margin-right: 35px;
+        }
+
+            main #actions #cancel {
+                background: whitesmoke;
+                color: black;
+                border: 2px solid black;
+                box-shadow: 1px 2px black;
+            }
+
+            main #actions #update {
+                background:rgb(43 120 228);
+                color: white;
+                border: 2px solid black;
+                box-shadow: 1px 2px black;
+            }

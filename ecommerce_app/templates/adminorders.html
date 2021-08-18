@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Orders</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/adminorders.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <div>
+            <p><a href="/dashboard/orders">Orders</a></p>
+            <p><a href="/dashboard/products">Products</a></p>
+            <p><a href="/admin_logout">Logout</a></p>
+        </div>
+    </header>
+    <main class="align">
+        <div id="filter_bar">
+            <form id="searchbar" action="" method="post">
+                {% csrf_token %}
+                <p>
+                    <button type="submit">Search</button>
+                    <input type="text" value="search">
+                </p>
+            </form>
+            <form id="sortbar" action="" method="post">
+                {% csrf_token %}
+                <select class="sortbar" name="sort_by">
+                    <option value="default" disabled selected hidden>- Sort By -</option>
+                    <option value="Order in Process">Order in Process</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+            </form>
+        </div>
+        <div id="orders">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Billing Address</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="">{order.id}</a></td>
+                        <td>{order.user.first_name}</td>
+                        <td>{order.updated_at}</td>
+                        <td>
+                            {order.user.address}
+                            {order.user.address_2}
+                            {order.user.city}
+                            {order.user.state}
+                            {order.user.zipcode}
+                        </td>
+                        <td>{context:total item price}</td>
+                        <td>
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <select class="sortbar" name="sort_by">
+                                    <option value="Order in Process">Order in Process</option>
+                                    <option value="Shipped">Shipped</option>
+                                    <option value="Cancelled">Cancelled</option>
+                                </select>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="align">
+        <div id="page_selector">
+            <p><a href="">1</a></p>
+            <p><a href="">2</a></p>
+            <p><a href="">3</a></p>
+            <p><a href="">4</a></p>
+            <p><a href="">-></a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

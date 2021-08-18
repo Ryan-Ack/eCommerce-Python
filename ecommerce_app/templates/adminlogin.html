@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/adminlogin.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <div id="errors">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <main>
+        {% csrf_token %}
+        <form action="/admin_login" method="POST">
+            {%csrf_token%}
+            <h3>Admin Login Page</h3>
+            <p>
+                <label>Email: </label>
+                <input type="email" name="admin_email">
+            </p>
+            <p>
+                <label>Password: </label>
+                <input type="password" name="admin_password">
+            </p>
+            <button>Login</button>
+        </form>
+    </main>
+</body>
+
+</html>

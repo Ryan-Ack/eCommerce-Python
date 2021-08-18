@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Product</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/adminproducts.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <div>
+            <p><a href="/dashboard/orders">Orders</a></p>
+            <p><a href="/dashboard/products">Products</a></p>
+            <p><a href="/admin_logout">Logout</a></p>
+        </div>
+    </header>
+    <main class="align">
+        <div id="filter_bar">
+            <form id="searchbar" action="" method="post">
+                {% csrf_token %}
+                <p>
+                    <button type="submit">Search</button>
+                    <input type="text" value="search">
+                </p>
+            </form>
+            <a href="/dashboard/product/create"><button>Add New Product</button></a>
+        </div>
+        <div id="products">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Picture</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Inventory Count</th>
+                        <th>Quantity Sold</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in all_products %}
+                        <tr>
+                            <td><img src="{%static 'img/stick_bug.jfif'%}" alt="item_picture"></td>
+                            <td>{{product.id}}</td>
+                            <td>{{product.item_name}}</td>
+                            <td>{{product.item_count}}</td>
+                            <td>{context: product.item_sold}</td>
+                            <td>
+                                <a href="/dashboard/product/edit/{{product.id}}">Edit</a>
+                                <a href="/dashboard/product/delete/{{product.id}}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="align">
+        <div id="page_selector">
+            <p><a href="">1</a></p>
+            <p><a href="">2</a></p>
+            <p><a href="">3</a></p>
+            <p><a href="">4</a></p>
+            <p><a href="">-></a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

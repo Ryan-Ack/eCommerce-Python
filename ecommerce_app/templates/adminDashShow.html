@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo eCommerce</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/adminDashShow.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <div>
+            <p><a href="/dashboard/orders">Orders</a></p>
+            <p><a href="/dashboard/products">Products</a></p>
+            <p><a href="/admin_logout">Logout</a></p>
+        </div>
+    </header>
+    <main>
+        <div id="user_details">
+            <p>Order Id: {cart.id}</p>
+            <br>
+            <p>Customer shipping info:</p>
+            <p>name: {user.name}</p>
+            <p>address: {user.address}</p>
+            <p>city: {user.city}</p>
+            <p>state: {user.state}</p>
+            <p>zip: {user.zip}</p>
+            <br>
+            <p>Customer billing info:</p>
+            <p>name: {user.name}</p>
+            <p>address: {user.address}</p>
+            <p>city: {user.city}</p>
+            <p>state: {user.state}</p>
+            <p>zip: {user.zip}</p>
+        </div>
+        <div id="cart_details">
+            <div id="contents">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{item.id}</td>
+                            <td>{item.name}</td>
+                            <td>${item.price}</td>
+                            <td>{item.quantity}</td>
+                            <td>{context:total item price}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="under_table">
+                <div id="status">
+                    <p>Status: {cart.status}</p>
+                </div>
+                <div id="cost">
+                    <p>Sub total: ${total cart price}</p>
+                    <p>Shipping: ${shipping price}</p>
+                    <p>Total Price: ${total car price + shipping}</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

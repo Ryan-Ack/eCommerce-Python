@@ -1,0 +1,160 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    width: 1080px;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    height: 60px;
+    padding-top: 20px;
+}
+
+    header h1 {
+        color: white;
+        margin-left: 15px;
+        font-size: 28pt;
+    }
+
+    header div {
+        color: white;
+        margin-right: 15px;
+        padding-top: 10px;
+        display: flex;
+        font-size: 14pt;
+    }
+
+        header div p {
+            margin-right: 30px;
+        }
+
+            header div p a {
+                color: white;
+                text-decoration: none;
+            }
+
+main {
+    padding: 20px;
+}
+
+    #total {
+        width: 20%;
+        margin-right:140px;
+    }
+
+        #total button {
+            background: green;
+            color: white;
+            border: 2px solid black;
+            box-shadow: 1px 2px black;
+            width: 130px;
+            height: 25px;
+        }
+
+    table{
+        border: 2px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        margin-left: 10px;
+        width: 78%;
+    }
+        
+        table th {
+            background: #cccccc;
+            border-bottom: 2px solid black;
+        }
+        
+        table th, td {
+            border-right: 2px solid black;
+            padding: 5px;
+            color: black;
+        }
+        
+        table tr:nth-child(odd) {
+            background: #eee;
+        }
+        
+        table tr:nth-child(even) {
+            background: #fff;
+        }
+
+    #shipping {
+        width: 260px;
+        margin-left: 0
+    }
+
+    #shipping p {
+        display: flex;
+    }
+
+        #shipping label {
+            width: 100px;
+            margin: 0;
+        }
+
+        #shipping input {
+            width: 150px;
+            margin-left: 0;
+            margin-top: 5px
+        }
+
+    #billing {
+        width: 260px;
+        margin-left: 0
+    }
+
+    #billing p {
+        display: flex;
+    }
+
+        #billing label {
+            width: 100px;
+            margin: 0;
+        }
+
+        #billing input {
+            width: 150px;
+            margin: 0;
+            margin-top: 5px
+        }
+
+    #checkbox input {
+        width: 20px;
+        margin: 5px 0;
+    }
+
+    #checkbox label {
+        width: 150px;
+        padding-top: 3px;
+    }
+    
+    #expiration input {
+        width: 40px;
+        margin-top: 5px
+    }
+
+    #expiration #month {
+        margin-right: 5px;
+    }
+
+    #expiration #year {
+        margin-left: 5px;
+    }
+
+    #billing button {
+        float: right;
+        background: #8ddce3;
+        color: black;
+        border: 2px solid black;
+        box-shadow: 1px 2px black;
+    }
+
+    #shipping h2, #billing h2 {
+        margin: 10px 0;
+    }

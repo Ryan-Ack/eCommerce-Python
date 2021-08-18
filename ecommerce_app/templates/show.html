@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Item</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/show.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <h1>Dojo eCommerce</h1>
+        <div>
+            <p><a href="/">Home</a></p>
+            <p><a href="/carts">Shopping Cart {1}</a></p>
+            <p><a href="/loginandreg">Login</a></p>
+            <p><a href="/logout">Logout</a></p>
+        </div>
+    </header>
+    <main>
+        <div id="product_name">
+            <h2> {{ items.item_name }} - {{ items.item_size}}</h2>
+            <img src="{%static 'img/Arizona_tobacco.jpg'%}" alt="item image">
+        </div>
+        <div id="description">
+            <h4>Product Description:</h4>
+            <p>
+                <span>{{ items.item_description }}!</span> {{ items.item_description }}{{ items.item_description }}
+                {{ items.item_description }}{{ items.item_description }}{{ items.item_description }}{{ items.item_description }}
+                {{ items.item_description }}{{ items.item_description }}{{ items.item_description }}{{ items.item_description }}
+                {{ items.item_description }}{{ items.item_description }}{{ items.item_description }}{{ items.item_description }}
+                {{ items.item_description }}{{ items.item_description }}{{ items.item_description }}{{ items.item_description }}
+                {{ items.item_description }}{{ items.item_description }}{{ items.item_description }}{{ items.item_description }}
+                {{ items.item_description }}{{ items.item_description }}{{ items.item_description }}{{ items.item_description }}
+                {{ items.item_description }}{{ items.item_description }}{{ items.item_description }}{{ items.item_description }}
+            </p>
+            <form action="/show/{{items.id}}" method="post">
+                {%csrf_token%}
+                <select type="dropdown" name="dropdown" id="">Dropdown div
+                    {% for key, price in price_list.items %}
+                        <option value="{{items.id}}">{{ key }} - ${{ price }}</option>
+                    {% endfor %}
+                </select>
+                <a href="#"><button>Add to Cart</button></a>
+            </form>
+        </div>
+
+    </main>
+    <footer>
+        <div id="similar_products">
+            <h2>Suggested Items:</h2>
+            {% for product in all_products %}
+                {% if product.id != items.id %}
+                    <div class="similar-content">
+                        <a href="/show/{{product.id}}"><img src="{%static 'img/Arizona_tobacco.jpg'%}" alt="item image"></a>
+                        <p class="price">${{ product.item_price }}</p>
+                        <p class="name">{{ product.item_name }} - {{ product.item_size}}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </footer>
+</body>
+</html>

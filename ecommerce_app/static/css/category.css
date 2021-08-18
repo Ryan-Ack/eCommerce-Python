@@ -1,0 +1,228 @@
+* {
+    margin: 0 auto;
+    /* border: 1px dotted black; */
+}
+
+body {
+    width: 1080px;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    height: 60px;
+    padding-top: 20px;
+}
+
+    header h1 {
+        color: white;
+        margin-left: 15px;
+        font-size: 28pt;
+    }
+
+    header div {
+        color: white;
+        margin-right: 15px;
+        padding-top: 10px;
+        display: flex;
+        font-size: 14pt;
+    }
+
+        header div p {
+            margin-right: 30px;
+        }
+
+            header div p a {
+                color: white;
+                text-decoration: none;
+            }
+
+main {
+    display: flex;
+    border: 3px solid black;
+}
+
+#side-bar {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    margin: 20px;
+    height: 250px;
+    padding: 10px;
+}
+
+    #side-bar p {
+        padding-top: 5px;
+        margin-top: 10px;
+        display: flex;
+        vertical-align: baseline;
+    }
+
+    #side-bar input {
+        height: 20px;
+        border: 2px solid black;
+        border-radius: 3px;
+        text-align: center;
+        color: rgb(122, 120, 120);
+    }
+
+    #side-bar img {
+        width: 18px;
+        border: 2px solid black;
+        padding: 2px;
+        border-radius: 4px;
+        margin-left: 5px;
+    }
+
+    #side-bar ul {
+        list-style-type: none;
+        margin: 10px;
+        padding: 0;
+        font-size: 14pt;
+        font-weight: bold;
+    }
+
+    #side-bar ul li {
+        padding-left: 15px;
+        font-weight: normal;
+        font-size: 12pt;
+        margin-top: 5px;
+    }
+
+#container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 65%;
+    margin: 20px;
+}
+
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+    #nav-bar h1 {
+        margin-left: 0;
+        font-size: 20pt;
+        padding: 10px 0 0 20px;
+    }
+
+    .pagination {
+        padding: 15px 20px 0 0;
+        margin-right: 0;
+    }
+
+        .pagination a {
+            color: #004080;
+            font-size: 12pt;
+            margin-right: 7px;
+        }
+
+        .pagination a:visited {
+            color: #004080;
+        }
+
+    #page_selector {
+        display: flex;
+    }
+
+        #page_selector p {
+            border-right: 1px solid black;
+        }
+
+        #page_selector p:nth-last-child(1){
+            border-right: none;
+        }
+
+    form {
+        margin-right: 20px;
+        margin-bottom: 40px;
+    }
+
+        form select {
+            padding: 2px;
+            border: 2px solid black;
+        }
+
+#products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+    .content {
+        margin: 30px;
+        width: 40%;
+    }
+
+        .content img {
+            border: 2px solid black;
+            width: 98%;
+        }
+
+        .price {
+            text-align: right;
+            margin-top:-26px;
+            color: black;
+            background-color: lightgray;
+            opacity: .5;
+            width: 96%;
+            padding: 2px 5px 0 0;
+            font-weight: bold;
+        }
+
+        .item {
+            padding: 2px 0 0 5px;
+            font-size: 14pt;
+        }
+
+#footer {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+#footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #004080;
+    border: 2px solid black;
+}
+
+    #footer li {
+        float: left;
+    }
+
+    #footer li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 5px;
+        text-decoration: none;
+    }
+
+    .active {
+        text-align: center;
+        padding-top: 5px;
+        color: white;
+    }
+
+    .disabled {
+        text-align: center;
+        padding: 5px 7px;
+        color: white;
+    }
+
+    #footer li a:hover {
+        background-color: #2894ff;
+    }
+
+    a {
+        padding: 0;
+    }
